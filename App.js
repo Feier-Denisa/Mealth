@@ -7,18 +7,11 @@
  */
 
 import React from 'react';
-import {
-  Text,
-  View,
-  SafeAreaView
-} from 'react-native';
+
+import PrimeScreen from './src/screens/PrimeScreen';
 
 const App = () => {
-    return (
-      <SafeAreaView>
-        <Text>Pula</Text>
-      </SafeAreaView>
-    )
+    return <PrimeScreen/>
 };
 
 export default App;

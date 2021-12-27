@@ -1,20 +1,28 @@
 import React from "react";
-import {SafeAreaView, StyleSheet, View} from "react-native";
+import { SafeAreaView, StyleSheet, View, Dimensions } from "react-native";
+import Icon from "react-native-vector-icons/SimpleLineIcons"
 
 import HandsBackground from "../components/HandsBackground";
 import PrimeTitle from "../components/PrimeTitle";
 
 const PrimeScreen = () => {
+
+    const windowWidth = Dimensions.get('window').width;
+
+    const titleWidth = windowWidth * 0.8
+    
+    const titleHeight = titleWidth - 85
+
     return (
         <HandsBackground style={styles.fullscreen}>
             <SafeAreaView style={styles.fullscreen}>
                 <View style={{...styles.fullscreen, ...styles.centerAll}}>
-                    <View style={styles.titleImageContainer}>
+                    <View style={{...styles.titleImageContainer, width: titleWidth, height: titleHeight}}>
                         <PrimeTitle style={styles.titleImage}/>
                     </View>
                 </View>
-                <View style={styles.bottomContainer}>
-
+                <View style={{...styles.bottomContainer, ...styles.centerAll}}>
+                    <Icon name="arrow-right-circle" size={80} color="rgba(246, 131, 65, 1)"/>
                 </View>
             </SafeAreaView>
         </HandsBackground>
@@ -30,8 +38,8 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     titleImageContainer: {
-        width: 350, 
-        height: 250,
+        // width: 350, 
+        // height: 250,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -42,7 +50,6 @@ const styles = StyleSheet.create({
     bottomContainer: {
         height: 170,
         width: '100%',
-        backgroundColor: 'red'
     }
 })
 

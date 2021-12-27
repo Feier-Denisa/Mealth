@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, View, Dimensions } from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
 import Icon from "react-native-vector-icons/SimpleLineIcons"
 
 import HandsBackground from "../components/HandsBackground";
@@ -10,21 +10,19 @@ const PrimeScreen = () => {
     const windowWidth = Dimensions.get('window').width;
 
     const titleWidth = windowWidth * 0.8
-    
+
     const titleHeight = titleWidth - 85
 
     return (
         <HandsBackground style={styles.fullscreen}>
-            <SafeAreaView style={styles.fullscreen}>
-                <View style={{...styles.fullscreen, ...styles.centerAll}}>
-                    <View style={{...styles.titleImageContainer, width: titleWidth, height: titleHeight}}>
-                        <PrimeTitle style={styles.titleImage}/>
-                    </View>
+            <View style={{...styles.fullscreen, ...styles.centerAll}}>
+                <View style={{...styles.titleImageContainer, width: titleWidth, height: titleHeight}}>
+                    <PrimeTitle style={styles.titleImage}/>
                 </View>
-                <View style={{...styles.bottomContainer, ...styles.centerAll}}>
-                    <Icon name="arrow-right-circle" size={80} color="rgba(246, 131, 65, 1)"/>
-                </View>
-            </SafeAreaView>
+            </View>
+            <View style={{...styles.bottomContainer, ...styles.centerAll}}>
+                <Icon name="arrow-right-circle" size={80} color="rgba(246, 131, 65, 1)"/>
+            </View>
         </HandsBackground>
     )
 }

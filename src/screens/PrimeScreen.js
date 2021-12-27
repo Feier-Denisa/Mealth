@@ -1,17 +1,21 @@
 import React from "react";
-import { StyleSheet, View, Dimensions } from "react-native";
+import { StyleSheet, View, Dimensions, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/SimpleLineIcons"
 
 import HandsBackground from "../components/HandsBackground";
 import PrimeTitle from "../components/PrimeTitle";
 
-const PrimeScreen = () => {
+const PrimeScreen = ({navigation}) => {
 
     const windowWidth = Dimensions.get('window').width;
 
     const titleWidth = windowWidth * 0.8
 
     const titleHeight = titleWidth - 85
+
+    const goToSignInUpScreen = () => {
+        navigation.navigate("Second")
+    }
 
     return (
         <HandsBackground style={styles.fullscreen}>
@@ -20,9 +24,9 @@ const PrimeScreen = () => {
                     <PrimeTitle style={styles.titleImage}/>
                 </View>
             </View>
-            <View style={{...styles.bottomContainer, ...styles.centerAll}}>
+            <TouchableOpacity style={{...styles.bottomContainer, ...styles.centerAll}} onPress={goToSignInUpScreen}>
                 <Icon name="arrow-right-circle" size={80} color="rgba(246, 131, 65, 1)"/>
-            </View>
+            </TouchableOpacity>
         </HandsBackground>
     )
 }

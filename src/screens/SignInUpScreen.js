@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View, Dimensions } from "react-native";
 import Icon from "react-native-vector-icons/SimpleLineIcons"
 import LinearGradient from 'react-native-linear-gradient'
@@ -9,7 +9,7 @@ import PrimeTitle from "../components/PrimeTitle";
 import DarkModle from '../components/DarkModle';
 import RoundedButton from "../components/RoundedButton";
 
-const SignInUpScreen = () => {
+const SignInUpScreen = ({navigation}) => {
 
     const windowWidth = Dimensions.get('window').width;
 

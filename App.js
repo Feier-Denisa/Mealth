@@ -16,16 +16,25 @@ import SignInUpScreen from './src/screens/SignInUpScreen';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-    // return (
-    //   <NavigationContainer>
-    //     <Stack.Navigator screenOptions={{
-    //       headerShown: false
-    //     }}>
-    //       <Stack.Screen name="Prime" component={PrimeScreen} />
-    //     </Stack.Navigator>
-    //   </NavigationContainer>
-    // )
-    return <SignInUpScreen />
+    return (
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerShown: false
+        }}>
+          <Stack.Screen 
+            name="Prime" 
+            component={PrimeScreen} 
+          />
+          <Stack.Screen 
+            name="Second" 
+            component={SignInUpScreen} 
+            options={{
+              gestureEnabled: false
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
 };
 
 export default App;

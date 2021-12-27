@@ -1,8 +1,12 @@
 import React from "react";
-import{Text,View} from 'react-native';
+import { Image } from 'react-native';
 
-const PrimeTitle = () => {
+const titlePath = "../../assets/images/title.png"
 
+const PrimeTitle = (props) => {
+    return (
+        <Image source={require(titlePath)} style={props.style} />
+    )
 }
 
 export default PrimeTitle

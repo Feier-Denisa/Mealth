@@ -13,7 +13,7 @@ const SignInUpScreen = () => {
 
     const windowWidth = Dimensions.get('window').width;
 
-    const titleWidth = windowWidth * 0.9
+    const titleWidth = windowWidth * 0.8
 
     const titleHeight = titleWidth - 85
 
@@ -28,17 +28,20 @@ const SignInUpScreen = () => {
                 <DarkModle>
                     <View style={{...styles.fullscreen, ...styles.center}}>
                         <View>
-                            <HandsBackground style={{ width: titleWidth, height: titleHeight }}>
-
+                            <HandsBackground style={{ width: titleWidth, height: titleHeight + 45, marginBottom: 90}}>
+                                <PrimeTitle style={{ width: titleWidth, height: titleHeight}}/>
                             </HandsBackground>
-
+                        </View>
+                        <View style={{width: '87%'}}>
                             <RoundedButton 
                                 text="Sign in" 
                                 style={{...styles.button, backgroundColor: '#F68341'}} 
                                 textStyle={{color: 'white'}}
                             />
-
-                            <RoundedButton text="Sign out" style={styles.button} />
+                            <RoundedButton 
+                                text="Sign out" 
+                                style={styles.button} 
+                            />
                         </View>
                     </View>
                 </DarkModle>

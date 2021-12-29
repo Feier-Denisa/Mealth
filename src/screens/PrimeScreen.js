@@ -5,6 +5,8 @@ import Icon from "react-native-vector-icons/SimpleLineIcons"
 import HandsBackground from "../components/HandsBackground";
 import PrimeTitle from "../components/PrimeTitle";
 
+import authScreensIds from "../constants/authScreensIds";
+
 const PrimeScreen = ({navigation}) => {
 
     const windowWidth = Dimensions.get('window').width;
@@ -14,7 +16,7 @@ const PrimeScreen = ({navigation}) => {
     const titleHeight = titleWidth - 85
 
     const goToSignInUpScreen = () => {
-        navigation.navigate("Second")
+        navigation.navigate(authScreensIds.second)
     }
 
     return (
@@ -40,8 +42,6 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     titleImageContainer: {
-        // width: 350, 
-        // height: 250,
         alignItems: 'center',
         justifyContent: 'center',
     },

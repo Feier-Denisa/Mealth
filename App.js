@@ -12,6 +12,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import PrimeScreen from './src/screens/PrimeScreen';
 import SignInUpScreen from './src/screens/SignInUpScreen';
+import SignInScreen from './src/screens/SignInScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
+
+import authScreensIds from './src/constants/authScreensIds';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,12 +26,26 @@ const App = () => {
           headerShown: false
         }}>
           <Stack.Screen 
-            name="Prime" 
+            name={authScreensIds.prime}
             component={PrimeScreen} 
           />
           <Stack.Screen 
-            name="Second" 
+            name={authScreensIds.second} 
             component={SignInUpScreen} 
+            options={{
+              gestureEnabled: false
+            }}
+          />
+          <Stack.Screen 
+            name={authScreensIds.signIn}  
+            component={SignInScreen} 
+            options={{
+              gestureEnabled: false
+            }}
+          />
+          <Stack.Screen 
+            name={authScreensIds.signUp}
+            component={SignUpScreen} 
             options={{
               gestureEnabled: false
             }}

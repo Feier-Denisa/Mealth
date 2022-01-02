@@ -2,23 +2,20 @@ import React, { useState } from 'react'
 import { Text, StyleSheet, View, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/SimpleLineIcons'
 
-import Background from '../components/Background'
-import RoundedButton from '../components/RoundedButton'
-import RoundedTextInput from '../components/RoundedTextInput'
-import useKeyboard from '../hooks/useKeyboard'
+import Background from '../../components/Background'
+import RoundedButton from '../../components/RoundedButton'
+import RoundedTextInput from '../../components/RoundedTextInput'
+import useKeyboard from '../../hooks/useKeyboard'
 
-const SignInScreen = ({navigation}) => {
+const SignUpScreen = ({navigation}) => {
 
     const quarterWindowHeight = Dimensions.get('window').height / 4;
     const isKeyboardUp = useKeyboard()
     const [username, setUsername] = useState(undefined)
     const [password, setPassword] = useState(undefined)
+    const [rePassword, setRePassword] = useState(undefined)
 
     const onSignIn = () => {
-
-    }
-
-    const onForgotPassword = () => {
 
     }
 
@@ -35,27 +32,29 @@ const SignInScreen = ({navigation}) => {
                     </TouchableOpacity>
                     <View style={{height: !isKeyboardUp ? quarterWindowHeight : 0}}/>
                     <View style={{...styles.center}}>
-                        <Text style={{...styles.title, marginBottom: !isKeyboardUp ? 35 : 10 }}>Sign in</Text>
+                        <Text style={{...styles.title, marginBottom: !isKeyboardUp ? 35 : 10 }}>Sign Up</Text>
                         <RoundedTextInput 
-                            placeholder="Username" 
+                            placeholder="Enter Username" 
                             style={{...styles.marginTop}}
                             onChangeText={setUsername}
                             value={username} />
                         <RoundedTextInput 
-                            placeholder="Password" 
+                            placeholder="Enter Password" 
                             style={{...styles.marginTop}} 
                             secureTextEntry={true}
                             onChangeText={setPassword}
                             value={password} />
+                        <RoundedTextInput 
+                            placeholder="Re-enter Password" 
+                            style={{...styles.marginTop}} 
+                            secureTextEntry={true}
+                            onChangeText={setRePassword}
+                            value={rePassword} />
                         <RoundedButton 
                             text="Sign in" 
                             style={{ ...styles.marginTop, ...styles.signInButton}} 
                             textStyle={{color: 'white'}}
                             onPress={onSignIn} />
-                        <TouchableOpacity style={styles.forgotPasswordCont} onPress={onForgotPassword}>
-                            <View style={{flex: 1}}/>
-                            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-                        </TouchableOpacity>
                     </View>
                 </View>
             </SafeAreaView>
@@ -98,4 +97,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SignInScreen
+export default SignUpScreen

@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, View, Dimensions, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/SimpleLineIcons"
 
-import HandsBackground from "../components/HandsBackground";
-import PrimeTitle from "../components/PrimeTitle";
+import HandsBackground from "../../components/HandsBackground";
+import PrimeTitle from "../../components/PrimeTitle";
 
-import authScreensIds from "../constants/authScreensIds";
+import authScreensIds from "../../constants/authScreensIds";
 
 const PrimeScreen = ({navigation}) => {
 

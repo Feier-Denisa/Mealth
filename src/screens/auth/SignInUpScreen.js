@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet, View, Dimensions } from "react-native";
 
-import HandsBackground from "../components/HandsBackground";
-import PrimeTitle from "../components/PrimeTitle";
-import RoundedButton from "../components/RoundedButton";
-import Background from "../components/Background";
+import HandsBackground from "../../components/HandsBackground";
+import PrimeTitle from "../../components/PrimeTitle";
+import RoundedButton from "../../components/RoundedButton";
+import Background from '../../components/Background'
 
-import authScreensIds from "../constants/authScreensIds";
+import authScreensIds from "../../constants/authScreensIds";
 
 const SignInUpScreen = ({navigation}) => {
 
